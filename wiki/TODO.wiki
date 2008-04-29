@@ -5,3 +5,5 @@
   * Create distributable package.
 
   * Need passthrough of all doclet parameters.  Today, one can only specify parameters xml-doclet has chosen to expose.
+
+  * Create XSD describing XML format.
