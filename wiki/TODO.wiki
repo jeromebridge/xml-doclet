@@ -2,6 +2,6 @@
 #labels Phase-Design
 
 = Details =
-* Create distributable package.
+  * Create distributable package.
 
-* Need passthrough of all doclet parameters.  Today, one can only specify parameters xml-doclet has chosen to expose.
+  * Need passthrough of all doclet parameters.  Today, one can only specify parameters xml-doclet has chosen to expose.
