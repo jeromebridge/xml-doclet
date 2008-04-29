@@ -7,3 +7,5 @@
   * Need passthrough of all doclet parameters.  Today, one can only specify parameters xml-doclet has chosen to expose.
 
   * Create XSD describing XML format.
+
+  * Upgrade to trunk (instead of stable) appassembler, to deal with annoying changedirectory usage by generated script.
