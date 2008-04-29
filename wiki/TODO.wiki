@@ -1,9 +1,7 @@
 #summary TODO Items
 #labels Phase-Design
 
-= Introduction =
-A summary of items that stand out as issues with xml-doclet.
-
 = Details =
 * Create distributable package.
+
 * Need passthrough of all doclet parameters.  Today, one can only specify parameters xml-doclet has chosen to expose.
