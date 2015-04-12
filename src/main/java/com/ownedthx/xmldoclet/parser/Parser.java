@@ -1,17 +1,54 @@
 package com.ownedthx.xmldoclet.parser;
 
-import com.sun.javadoc.*;
-import com.sun.javadoc.Parameter;
-import com.ownedthx.xmldoclet.xmlbindings.*;
-import com.ownedthx.xmldoclet.xmlbindings.Package;
-import com.ownedthx.xmldoclet.xmlbindings.Class;
-import com.ownedthx.xmldoclet.xmlbindings.Enum;
-
-import java.util.*;
-
-import java.security.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
+
+import com.ownedthx.xmldoclet.xmlbindings.Annotation;
+import com.ownedthx.xmldoclet.xmlbindings.AnnotationArgument;
+import com.ownedthx.xmldoclet.xmlbindings.AnnotationElement;
+import com.ownedthx.xmldoclet.xmlbindings.AnnotationInstance;
+import com.ownedthx.xmldoclet.xmlbindings.Class;
+import com.ownedthx.xmldoclet.xmlbindings.Constructor;
+import com.ownedthx.xmldoclet.xmlbindings.Enum;
+import com.ownedthx.xmldoclet.xmlbindings.EnumField;
+import com.ownedthx.xmldoclet.xmlbindings.ExceptionInstance;
+import com.ownedthx.xmldoclet.xmlbindings.Field;
+import com.ownedthx.xmldoclet.xmlbindings.GenericsInfo;
+import com.ownedthx.xmldoclet.xmlbindings.Interface;
+import com.ownedthx.xmldoclet.xmlbindings.Method;
+import com.ownedthx.xmldoclet.xmlbindings.Package;
+import com.ownedthx.xmldoclet.xmlbindings.Param;
+import com.ownedthx.xmldoclet.xmlbindings.Result;
+import com.ownedthx.xmldoclet.xmlbindings.Root;
+import com.ownedthx.xmldoclet.xmlbindings.ScopeModifier;
+import com.ownedthx.xmldoclet.xmlbindings.TypeInfo;
+import com.ownedthx.xmldoclet.xmlbindings.TypeVar;
+import com.ownedthx.xmldoclet.xmlbindings.WildCardInfo;
+import com.sun.javadoc.AnnotationDesc;
+import com.sun.javadoc.AnnotationTypeDoc;
+import com.sun.javadoc.AnnotationTypeElementDoc;
+import com.sun.javadoc.AnnotationValue;
+import com.sun.javadoc.ClassDoc;
+import com.sun.javadoc.ConstructorDoc;
+import com.sun.javadoc.FieldDoc;
+import com.sun.javadoc.MethodDoc;
+import com.sun.javadoc.PackageDoc;
+import com.sun.javadoc.ParamTag;
+import com.sun.javadoc.Parameter;
+import com.sun.javadoc.ParameterizedType;
+import com.sun.javadoc.ProgramElementDoc;
+import com.sun.javadoc.RootDoc;
+import com.sun.javadoc.Tag;
+import com.sun.javadoc.ThrowsTag;
+import com.sun.javadoc.Type;
+import com.sun.javadoc.TypeVariable;
+import com.sun.javadoc.WildcardType;
 
 // TODO
 // 1. -overview option support?
@@ -33,7 +70,8 @@ public class Parser
      * @param root A RootDoc intstance obtained via the doclet API
      * @return A XML (XStream) serializable element, containing everything parsed from javadoc doclet
      */
-    public static Root ParseRoot(RootDoc root)
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+   public static Root ParseRoot(RootDoc root)
     {
         processingStorage = new HashMap<PackageDoc, ParserMediary>();
         
@@ -281,7 +319,8 @@ public class Parser
      * @param annotationDocs Annotations decorated on some type
      * @return Serializable representation of annotations
      */
-    protected static AnnotationInstance[] ParseAnnotationInstances(AnnotationDesc[] annotationDocs, String origin)
+    @SuppressWarnings("unused")
+   protected static AnnotationInstance[] ParseAnnotationInstances(AnnotationDesc[] annotationDocs, String origin)
     {
         AnnotationInstance[] annotations = null;
 
@@ -590,7 +629,8 @@ public class Parser
      * @param docMethod
      * @return
      */
-    protected static Method ParseMethod(MethodDoc docMethod)
+    @SuppressWarnings("unused")
+   protected static Method ParseMethod(MethodDoc docMethod)
     {
         assert(docMethod != null);
 

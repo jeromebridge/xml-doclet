@@ -15,6 +15,7 @@ import com.ownedthx.xmldoclet.parser.Parser;
 /**
  * Unit test group for Interfaces
  */
+@SuppressWarnings("deprecation")
 public class InterfaceTest
     extends TestCase
 {
@@ -47,7 +48,8 @@ public class InterfaceTest
     public void testSampledoc()
     {
         App app = new App();
-        Root root = app.processSource(
+        @SuppressWarnings("unused")
+      Root root = app.processSource(
             ".",
             new String[] { "./src/test/java"},
             null,

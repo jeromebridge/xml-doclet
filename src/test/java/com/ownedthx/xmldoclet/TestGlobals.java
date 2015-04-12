@@ -1,11 +1,8 @@
 package com.ownedthx.xmldoclet;
 
 import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.PropertyConfigurator;
-import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
-
-import java.io.File;
+import org.apache.log4j.Logger;
 
 /**
  * A class to throw static stuff in for logic common across all test suites

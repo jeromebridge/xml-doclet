@@ -4,17 +4,31 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-import com.ownedthx.xmldoclet.xmlbindings.Package;
-import com.ownedthx.xmldoclet.xmlbindings.*;
-import com.ownedthx.xmldoclet.xmlbindings.Class;
 import com.ownedthx.xmldoclet.parser.Parser;
-import com.ownedthx.xmldoclet.simpledata.*;
-
-import java.util.List;
+import com.ownedthx.xmldoclet.simpledata.Class1;
+import com.ownedthx.xmldoclet.simpledata.Class2;
+import com.ownedthx.xmldoclet.simpledata.Class3;
+import com.ownedthx.xmldoclet.simpledata.Class4;
+import com.ownedthx.xmldoclet.simpledata.Class5;
+import com.ownedthx.xmldoclet.simpledata.Class6;
+import com.ownedthx.xmldoclet.simpledata.Class7;
+import com.ownedthx.xmldoclet.simpledata.Class8;
+import com.ownedthx.xmldoclet.simpledata.Class9;
+import com.ownedthx.xmldoclet.xmlbindings.AnnotationArgument;
+import com.ownedthx.xmldoclet.xmlbindings.AnnotationInstance;
+import com.ownedthx.xmldoclet.xmlbindings.Class;
+import com.ownedthx.xmldoclet.xmlbindings.Constructor;
+import com.ownedthx.xmldoclet.xmlbindings.Field;
+import com.ownedthx.xmldoclet.xmlbindings.Method;
+import com.ownedthx.xmldoclet.xmlbindings.Package;
+import com.ownedthx.xmldoclet.xmlbindings.Result;
+import com.ownedthx.xmldoclet.xmlbindings.Root;
+import com.ownedthx.xmldoclet.xmlbindings.TypeVar;
 
 /**
  * Unit test group for Classes
  */
+@SuppressWarnings("deprecation")
 public class ClassTest
     extends TestCase
 {
@@ -47,7 +61,8 @@ public class ClassTest
     public void testSampledoc()
     {
         App app = new App();
-        Root root = app.processSource(
+        @SuppressWarnings("unused")
+      Root root = app.processSource(
             ".",
             new String[] { "./src/test/java"},
             null,
@@ -396,7 +411,7 @@ public class ClassTest
     /**
      * testing one annotation instance on the class
      */
-    public void testClass7()
+   public void testClass7()
     {
         App app = new App();
 

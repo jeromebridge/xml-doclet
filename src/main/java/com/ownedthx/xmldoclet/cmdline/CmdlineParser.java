@@ -166,7 +166,8 @@ public class CmdlineParser
      * Defines the arguments allowed by the xmldoclet program
      * @return Returns the built-out options
      */
-    private static Options initialize()
+    @SuppressWarnings("static-access")
+   private static Options initialize()
     {
         Option classPath = OptionBuilder.withArgName( "classpath" )
                             .hasArg()

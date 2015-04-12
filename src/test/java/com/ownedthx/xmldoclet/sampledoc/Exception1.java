@@ -3,6 +3,7 @@ package com.ownedthx.xmldoclet.sampledoc;
 /** Exception 1
  * Exception1
  */
+@SuppressWarnings("serial")
 public class Exception1 extends java.lang.Exception
 {
     /** Exception1 Constructor

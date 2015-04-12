@@ -4,11 +4,16 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-import com.ownedthx.xmldoclet.xmlbindings.Package;
-import com.ownedthx.xmldoclet.xmlbindings.*;
+import com.ownedthx.xmldoclet.xmlbindings.AnnotationArgument;
+import com.ownedthx.xmldoclet.xmlbindings.AnnotationInstance;
 import com.ownedthx.xmldoclet.xmlbindings.Class;
-
-import java.util.ArrayList;
+import com.ownedthx.xmldoclet.xmlbindings.ExceptionInstance;
+import com.ownedthx.xmldoclet.xmlbindings.Method;
+import com.ownedthx.xmldoclet.xmlbindings.Package;
+import com.ownedthx.xmldoclet.xmlbindings.Param;
+import com.ownedthx.xmldoclet.xmlbindings.Root;
+import com.ownedthx.xmldoclet.xmlbindings.TypeInfo;
+import com.ownedthx.xmldoclet.xmlbindings.WildCardInfo;
 
 /**
  * Unit test group for Methods
@@ -57,7 +62,8 @@ public class MethodTest
 
         Package sdPackage = root.packages[0];
         Class sdClass1 = sdPackage.classes[0];
-        String methodPrepend = sdClass1.qualifiedName;
+        @SuppressWarnings("unused")
+      String methodPrepend = sdClass1.qualifiedName;
         Method[] testMethods = sdClass1.methods;
 
         // with method1 we are checking that a simple method can exist with no arguments and no return
@@ -128,7 +134,8 @@ public class MethodTest
 
         Package sdPackage = root.packages[0];
         Class sdClass1 = sdPackage.classes[0];
-        String methodPrepend = sdClass1.qualifiedName;
+        @SuppressWarnings("unused")
+      String methodPrepend = sdClass1.qualifiedName;
         Method[] testMethods = sdClass1.methods;
 
         // method - method with no arguments
@@ -260,7 +267,8 @@ public class MethodTest
         assertEquals(wildcard.superBounds.length, 1);
         assertNull(wildcard.extendsBounds);
 
-        TypeInfo superBounds = wildcard.superBounds[0];
+        @SuppressWarnings("unused")
+      TypeInfo superBounds = wildcard.superBounds[0];
         assertEquals( extendsBound.qualifiedName, "java.lang.String" );
         assertEquals( extendsBound.dimension, "");
         assertNull( extendsBound.generics );
@@ -323,7 +331,8 @@ public class MethodTest
 
         Package sdPackage = root.packages[0];
         Class sdClass1 = sdPackage.classes[0];
-        String methodPrepend = sdClass1.qualifiedName;
+        @SuppressWarnings("unused")
+      String methodPrepend = sdClass1.qualifiedName;
         Method[] testMethods = sdClass1.methods;
 
         // method1 -- we check public scope

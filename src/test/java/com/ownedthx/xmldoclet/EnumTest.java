@@ -4,12 +4,12 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-import com.ownedthx.xmldoclet.xmlbindings.Package;
-import com.ownedthx.xmldoclet.xmlbindings.*;
-import com.ownedthx.xmldoclet.xmlbindings.Class;
+import com.ownedthx.xmldoclet.xmlbindings.AnnotationArgument;
+import com.ownedthx.xmldoclet.xmlbindings.AnnotationInstance;
 import com.ownedthx.xmldoclet.xmlbindings.Enum;
-
-import java.util.ArrayList;
+import com.ownedthx.xmldoclet.xmlbindings.EnumField;
+import com.ownedthx.xmldoclet.xmlbindings.Package;
+import com.ownedthx.xmldoclet.xmlbindings.Root;
 
 /**
  * Unit test group for Enums
